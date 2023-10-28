@@ -28,6 +28,16 @@
 		</license>
 	</licenses>
 	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
+  <distributionManagement>
+		<snapshotRepository>
+		  <id>ossrh</id>
+		  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+  </distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
