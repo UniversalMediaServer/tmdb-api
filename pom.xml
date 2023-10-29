@@ -11,6 +11,7 @@
 		<maven.compiler.release>17</maven.compiler.release>
 	</properties>
 	<name>TMDb API</name>
+	<url>https://github.com/UniversalMediaServer/tmdb-api</url>
 	<organization>
 		<name>Universal Media Server</name>
 		<url>https://www.universalmediaserver.com/</url>
@@ -28,6 +29,9 @@
 		</license>
 	</licenses>
 	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
+	<scm>
+		<url>https://github.com/UniversalMediaServer/tmdb-api.git</url>
+	</scm>
   <distributionManagement>
 		<snapshotRepository>
 		  <id>ossrh</id>
@@ -77,6 +81,32 @@
 					<runOrder>alphabetical</runOrder>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -96,6 +126,9 @@
 	<profiles>
 		<profile>
 			<id>sign-artifacts</id>
+			<!-- <properties>
+				<gpg.executable>/usr/local/bin/gpg</gpg.executable>
+			</properties> -->
 			<build>
 				<plugins>
 					<plugin>
