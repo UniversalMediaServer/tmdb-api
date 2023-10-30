@@ -1,0 +1,1 @@
+To deploy, run `mvn deploy -P release`
